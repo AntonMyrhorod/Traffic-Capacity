@@ -12,14 +12,14 @@
 
 class TrafficApp
 {
-public:
-    TrafficApp();
+    public:
+    TrafficApp ();
 
-    int parseCommandLine(int argc, char** argv);
-    bool needShowUsage();
-    void showUsage();
+    int parseCommandLine (int argc, char **argv);
+    bool needShowUsage () const;
+    static void showUsage ();
 
-private:
+    private:
     bool m_showUsage = false;
     std::string m_configPath;
     std::string m_roadDataPath;

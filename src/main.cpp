@@ -10,26 +10,26 @@
 #include "TrafficApp/TrafficApp.hpp"
 
 
-int main(int argc, char **argv)
+int main (int argc, char **argv)
 {
     int result = 0;
     TrafficApp app;
 
     try
     {
-        spdlog::set_level(spdlog::level::from_str(LOG_LEVEL));
+        spdlog::set_level (spdlog::level::from_str (LOG_LEVEL));
 
-        result = app.parseCommandLine(argc, argv);
+        result = app.parseCommandLine (argc, argv);
 
-        if (app.needShowUsage())
+        if (app.needShowUsage ())
         {
-            app.showUsage();
+            TrafficApp::showUsage ();
             return result;
         }
     }
-    catch (const std::exception& e)
+    catch (const std::exception &e)
     {
-        spdlog::error("Exception: {}", e.what());
+        spdlog::error ("Exception: {}", e.what ());
         result = 1;
     }
 
