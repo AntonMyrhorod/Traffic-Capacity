@@ -7,3 +7,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+
+# Definitions
+add_definitions(-DLOG_LEVEL="debug") # "trace", "debug", "info", "warning", "error", "critical", "off"

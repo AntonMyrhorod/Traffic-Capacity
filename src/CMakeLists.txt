@@ -7,3 +7,9 @@ target_sources(
     PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/main.cpp
 )
+
+target_link_libraries(
+    ${TARGET}
+    PRIVATE
+    spdlog
+)

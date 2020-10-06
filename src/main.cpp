@@ -2,13 +2,13 @@
 #include <iostream>
 
 // Third-party includes
+#include "spdlog/spdlog.h"
 
 // Non-local includes
 
-// Generated includes
-
 // Local includes
 #include "TrafficApp/TrafficApp.hpp"
+
 
 int main(int argc, char **argv)
 {
@@ -17,6 +17,8 @@ int main(int argc, char **argv)
 
     try
     {
+        spdlog::set_level(spdlog::level::from_str(LOG_LEVEL));
+
         result = app.parseCommandLine(argc, argv);
 
         if (app.needShowUsage())
@@ -27,7 +29,7 @@ int main(int argc, char **argv)
     }
     catch (const std::exception& e)
     {
-        std::cout << e.what() << std::endl;
+        spdlog::error("Exception: {}", e.what());
         result = 1;
     }
 

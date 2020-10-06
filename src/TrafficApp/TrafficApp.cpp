@@ -1,8 +1,14 @@
+// Standard includes
+#include <iostream>
+
+// Third-party includes
+#include "spdlog/spdlog.h"
+
+// Non-local includes
+
+// Local includes
 #include "TrafficApp.hpp"
 
-#include <iostream>
-#include <vector>
-#include <exception>
 
 TrafficApp::TrafficApp()
 {
@@ -19,7 +25,7 @@ int TrafficApp::parseCommandLine(int argc, char **argv)
 
     if (argc != 5)
     {
-        std::cout << "Invalid arguments" << std::endl;
+        spdlog::error("Invalid arguments");
         m_showUsage = true;
         return 1;
     }
@@ -38,7 +44,7 @@ int TrafficApp::parseCommandLine(int argc, char **argv)
         }
         else
         {
-            std::cout << "Invalid argument: " << arg << std::endl;
+            spdlog::error("Invalid argument: {}", arg);
             m_showUsage = true;
             return 1;
         }
@@ -46,13 +52,13 @@ int TrafficApp::parseCommandLine(int argc, char **argv)
 
     if (m_configPath.empty() || m_roadDataPath.empty())
     {
-        std::cout << "Invalid arguments: config path and road data path are required" << std::endl;
+        spdlog::error("Invalid arguments: config path and road data path are required");
         m_showUsage = true;
         return 1;
     }
 
-    std::cout << "config: " << m_configPath <<
-                  "\ndata: " << m_roadDataPath << std::endl;
+    spdlog::debug("Config path: {}", m_configPath);
+    spdlog::debug("Road data path: {}", m_roadDataPath);
 
     return 0;
 }
