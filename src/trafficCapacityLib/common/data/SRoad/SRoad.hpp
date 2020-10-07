@@ -21,11 +21,16 @@ namespace data
 
 struct SRoad
 {
-    SRoad (const std::string &name, const SPoint &start, const SPoint &finish, const std::vector<STimeInterval> &timeIntervals);
+    SRoad (const std::string &name,
+           const SPoint &start,
+           const SPoint &finish,
+           const float distance,
+           const std::vector<STimeInterval> &timeIntervals);
 
     const std::string m_name;
     const SPoint m_start;
     const SPoint m_finish;
+    const float m_distance; // kilometers [km]
     const std::vector<STimeInterval> m_timeIntervals;
 };
 
