@@ -17,13 +17,15 @@ CTrafficApp::CTrafficApp ()
 
 int CTrafficApp::parseCommandLine (int argc, char **argv)
 {
+    const int validArgc = 5;
+
     if (argc == 2 && std::string (argv[1]) == "-h")
     {
         m_showUsage = true;
         return 0;
     }
 
-    if (argc != 5)
+    if (argc != validArgc)
     {
         spdlog::error ("Invalid arguments");
         m_showUsage = true;

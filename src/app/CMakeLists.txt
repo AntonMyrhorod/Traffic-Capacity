@@ -1,3 +1,5 @@
+set(TARGET trafficCapacityApp)
+
 add_executable(${TARGET})
 
 add_subdirectory(CTrafficApp)
@@ -12,6 +14,7 @@ target_link_libraries(
     ${TARGET}
     PRIVATE
     spdlog
+    trafficCapacity
 )
 
 add_definitions(-DLOG_LEVEL="${LOG_LEVEL}")

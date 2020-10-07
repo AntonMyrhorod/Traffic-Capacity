@@ -15,4 +15,4 @@ option(ENABLE_UNIT_TESTS "Enables the unit tests" OFF)
 option(ENABLE_EXAMPLE_APP "Enables the example application build" OFF)
 
 # Log level of example application
-set(LOG_LEVEL "debug" CACHE STRING "Log level: trace, debug, info, warning, error, critical, off")
+set(LOG_LEVEL "trace" CACHE STRING "Log level: trace, debug, info, warning, error, critical, off")

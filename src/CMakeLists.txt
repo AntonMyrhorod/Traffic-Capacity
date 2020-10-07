@@ -1,4 +1,4 @@
-#add_subdirectory(trafficCapacityLib)
+add_subdirectory(trafficCapacityLib)
 
 if(ENABLE_EXAMPLE_APP)
     add_subdirectory(app)

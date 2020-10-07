@@ -37,7 +37,7 @@ CheckOptions:
   - key: readability-identifier-naming.InlineNamespaceCase
     value: CamelCase
   - key: readability-identifier-naming.NamespaceCase
-    value: CamelCase
+    value: camelBack
   - key: readability-identifier-naming.EnumConstantCase
     value: CamelCase
   - key: readability-identifier-naming.ConstexprVariableCase
