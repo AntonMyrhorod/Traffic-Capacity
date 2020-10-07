@@ -1,15 +1,9 @@
-add_executable(${TARGET})
+#add_subdirectory(trafficCapacityLib)
 
-add_subdirectory(TrafficApp)
+if(ENABLE_EXAMPLE_APP)
+    add_subdirectory(app)
+endif()
 
-target_sources(
-    ${TARGET}
-    PRIVATE
-    ${CMAKE_CURRENT_LIST_DIR}/main.cpp
-)
-
-target_link_libraries(
-    ${TARGET}
-    PRIVATE
-    spdlog
-)
+if(ENABLE_UNIT_TESTS)
+    add_subdirectory(unitTests)
+endif()

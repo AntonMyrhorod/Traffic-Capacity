@@ -1,5 +1,4 @@
 // Standard includes
-#include <iostream>
 
 // Third-party includes
 #include "spdlog/spdlog.h"
@@ -7,13 +6,13 @@
 // Non-local includes
 
 // Local includes
-#include "TrafficApp/TrafficApp.hpp"
+#include "CTrafficApp/CTrafficApp.hpp"
 
 
 int main (int argc, char **argv)
 {
     int result = 0;
-    TrafficApp app;
+    CTrafficApp app;
 
     try
     {
@@ -23,7 +22,7 @@ int main (int argc, char **argv)
 
         if (app.needShowUsage ())
         {
-            TrafficApp::showUsage ();
+            CTrafficApp::showUsage ();
             return result;
         }
     }

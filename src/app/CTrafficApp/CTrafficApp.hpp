@@ -10,10 +10,10 @@
 // Local includes
 
 
-class TrafficApp
+class CTrafficApp
 {
     public:
-    TrafficApp ();
+    CTrafficApp ();
 
     int parseCommandLine (int argc, char **argv);
     bool needShowUsage () const;

@@ -7,15 +7,15 @@
 // Non-local includes
 
 // Local includes
-#include "TrafficApp.hpp"
+#include "CTrafficApp.hpp"
 
 
-TrafficApp::TrafficApp ()
+CTrafficApp::CTrafficApp ()
 {
     spdlog::trace ("TrafficApp constructor");
 }
 
-int TrafficApp::parseCommandLine (int argc, char **argv)
+int CTrafficApp::parseCommandLine (int argc, char **argv)
 {
     if (argc == 2 && std::string (argv[1]) == "-h")
     {
@@ -32,7 +32,7 @@ int TrafficApp::parseCommandLine (int argc, char **argv)
 
     for (int i = 1; i < argc; ++i)
     {
-        std::string arg (argv[i]);
+        const std::string arg (argv[i]);
 
         if (arg == "-d")
         {
@@ -63,12 +63,12 @@ int TrafficApp::parseCommandLine (int argc, char **argv)
     return 0;
 }
 
-bool TrafficApp::needShowUsage () const
+bool CTrafficApp::needShowUsage () const
 {
     return m_showUsage;
 }
 
-void TrafficApp::showUsage ()
+void CTrafficApp::showUsage ()
 {
     std::cout << "Usage: traffic-capacity\t[-c] <config-path>\tPath to json config file\n"
               << "\t\t\t[-d] <road-data-path>\tPath to json road data file\n"
