@@ -25,12 +25,14 @@ struct SRoad
            const SPoint &start,
            const SPoint &finish,
            const float distance,
+           const int lines,
            const std::vector<STimeInterval> &timeIntervals);
 
     const std::string m_name;
     const SPoint m_start;
     const SPoint m_finish;
     const float m_distance; // kilometers [km]
+    const int m_lines;
     const std::vector<STimeInterval> m_timeIntervals;
 };
 

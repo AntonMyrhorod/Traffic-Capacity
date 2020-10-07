@@ -1,6 +1,7 @@
 {
     "name": "Peremohy Avenue",
     "distance-km": 9.9,
+    "lines": 3,
     "startPoint":
     {
         "name": "Peremohy Square",
