@@ -17,4 +17,4 @@ target_link_libraries(
     trafficCapacity
 )
 
-add_definitions(-DLOG_LEVEL="${LOG_LEVEL}")
+add_definitions(-DLOG_LEVEL="${TRCP_APP_LOG_LEVEL}")

@@ -1,3 +1,6 @@
 [submodule "3rdParty/spdlog"]
 	path = 3rdParty/spdlog
 	url = https://github.com/gabime/spdlog.git
+[submodule "3rdParty/jsoncpp"]
+	path = 3rdParty/jsoncpp
+	url = https://github.com/open-source-parsers/jsoncpp.git
