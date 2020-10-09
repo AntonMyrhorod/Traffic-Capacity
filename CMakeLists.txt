@@ -18,3 +18,13 @@ add_subdirectory(3rdparty)
 
 # Sources
 add_subdirectory(src)
+
+# Example
+if(TRCP_BUILD_EXAMPLE_APP)
+    add_subdirectory(example)
+endif()
+
+# Test
+if(TRCP_BUILD_UNIT_TESTS)
+    add_subdirectory(test)
+endif()

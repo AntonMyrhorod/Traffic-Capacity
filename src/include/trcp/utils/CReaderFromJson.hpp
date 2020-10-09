@@ -1,14 +1,13 @@
 #pragma once
 
 // Standard includes
-#include <string>
 
 // Third-party includes
 
 // Non-local includes
-#include "common/data/SRoad/SRoad.hpp"
 
 // Local includes
+#include "IReader.hpp"
 
 
 namespace trcp
@@ -17,12 +16,12 @@ namespace trcp
 namespace reader
 {
 
-class IReader
+class CReaderFromJson : public IReader
 {
     public:
-    virtual ~IReader () = default;
+    ~CReaderFromJson () override = default;
 
-    virtual void parse (const std::string &source, data::SRoad &output) = 0;
+    void parse (const std::string &source, data::SRoad &output) override;
 };
 
 } // namespace reader

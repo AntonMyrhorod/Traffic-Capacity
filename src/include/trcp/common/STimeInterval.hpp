@@ -22,12 +22,10 @@ namespace data
 
 struct STimeInterval
 {
-    STimeInterval (const float maxSpeed, const float minSpeed, const STime start, const STime end);
-
-    const float m_maxSpeed; // kilometers per hour [km\h]
-    const float m_minSpeed; // kilometers per hour [km\h]
-    const STime m_start;
-    const STime m_end;
+    float m_maxSpeed = 0; // kilometers per hour [km\h]
+    float m_minSpeed = 0; // kilometers per hour [km\h]
+    STime m_start;
+    STime m_end;
 };
 
 } // namespace data

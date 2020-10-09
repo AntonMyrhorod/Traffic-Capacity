@@ -1,0 +1,98 @@
+{
+    "road":
+    {
+        "name": "Peremohy Avenue",
+        "distance-km": 9.9,
+        "lines": 3,
+        "startPoint":
+        {
+            "name": "Peremohy Square",
+            "latitude-dd": 50.4458782,
+            "longitude-dd": 30.4931779
+        },
+        "finishPoint":
+        {
+            "name": "Kiltseva Road",
+            "latitude-dd": 50.455406,
+            "longitude-dd": 30.356893
+        },
+        "timeIntervals":
+        [
+            {
+                "maxSpeed-kmh": 59.4,
+                "minSpeed-kmh": 33,
+                "startHours": 12,
+                "startMinutes": 30,
+                "endHours": 13,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 59.4,
+                "minSpeed-kmh": 29.7,
+                "startHours": 13,
+                "startMinutes": 30,
+                "endHours": 14,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 49.5,
+                "minSpeed-kmh": 27,
+                "startHours": 14,
+                "startMinutes": 30,
+                "endHours": 15,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 42.4,
+                "minSpeed-kmh": 22.8,
+                "startHours": 15,
+                "startMinutes": 30,
+                "endHours": 16,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 29.7,
+                "minSpeed-kmh": 14.85,
+                "startHours": 16,
+                "startMinutes": 30,
+                "endHours": 17,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 29.7,
+                "minSpeed-kmh": 11.88,
+                "startHours": 17,
+                "startMinutes": 30,
+                "endHours": 18,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 33,
+                "minSpeed-kmh": 14.85,
+                "startHours": 18,
+                "startMinutes": 30,
+                "endHours": 19,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 42.42,
+                "minSpeed-kmh": 22.84,
+                "startHours": 19,
+                "startMinutes": 30,
+                "endHours": 20,
+                "endMinutes": 30,
+            },
+            {
+                "maxSpeed-kmh": 59.4,
+                "minSpeed-kmh": 33,
+                "startHours": 20,
+                "startMinutes": 30,
+                "endHours": 21,
+                "endMinutes": 30,
+            }
+        ],
+        "year": 2020,
+        "month": 10,
+        "day": 7
+    }
+}

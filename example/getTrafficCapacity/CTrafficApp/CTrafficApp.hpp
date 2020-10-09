@@ -15,12 +15,11 @@ class CTrafficApp
     public:
     CTrafficApp ();
 
-    int parseCommandLine (int argc, char **argv);
-    bool needShowUsage () const;
-    static void showUsage ();
+    bool parseCommandLine (int argc, char **argv);
+    void calculateTrafficCapacity ();
 
     private:
-    bool m_showUsage = false;
+    void showUsage ();
+
     std::string m_configPath;
-    std::string m_roadDataPath;
 };
