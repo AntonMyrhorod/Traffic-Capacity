@@ -22,11 +22,11 @@ bool CTrafficApp::parseCommandLine (int argc, char **argv)
     if (argc == 3 && std::string (argv[1]) == "-c")
     {
         m_configPath = argv[2];
-        spdlog::debug ("Config path: {}", m_configPath);
+        spdlog::debug ("[CTrafficApp::parseCommandLine] Config path: {}", m_configPath);
         return true;
     }
 
-    spdlog::error ("Invalid arguments");
+    spdlog::error ("[CTrafficApp::parseCommandLine] Invalid arguments");
     showUsage ();
     return false;
 }

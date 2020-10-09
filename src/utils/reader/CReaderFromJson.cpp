@@ -23,6 +23,7 @@ void CReaderFromJson::parse (const std::string &source, data::SRoad &output)
 
     if (!ifs.is_open ())
     {
+        spdlog::error ("[CReaderFromJson::parse] Failed to open config: {}", source);
         throw std::exception ("Failed to open config");
     }
 
@@ -32,6 +33,7 @@ void CReaderFromJson::parse (const std::string &source, data::SRoad &output)
 
     if (!parseFromStream (builder, ifs, &root, &errs))
     {
+        spdlog::error ("[CReaderFromJson::parse] Failed to parse json file: {}", errs.c_str ());
         throw std::exception (errs.c_str ());
     }
 
@@ -41,7 +43,8 @@ void CReaderFromJson::parse (const std::string &source, data::SRoad &output)
     road.m_distance = root["road"]["distance-km"].asFloat ();
     road.m_lines = root["road"]["lines"].asInt ();
 
-    spdlog::debug ("Road name: {}, distance: {}, lines: {}", road.m_name, road.m_distance, road.m_lines);
+    spdlog::debug ("[CReaderFromJson::parse] Road name: {}, distance: {}, lines: {}", road.m_name,
+                   road.m_distance, road.m_lines);
 
     data::SPoint startPoint;
     data::SPoint finishPoint;
@@ -56,7 +59,8 @@ void CReaderFromJson::parse (const std::string &source, data::SRoad &output)
     road.m_start = startPoint;
     road.m_finish = finishPoint;
 
-    spdlog::debug ("Road start point: {}, finish point: {}", startPoint.m_name, finishPoint.m_name);
+    spdlog::debug ("[CReaderFromJson::parse] Road start point: {}, finish point: {}",
+                   startPoint.m_name, finishPoint.m_name);
 }
 
 } // namespace reader

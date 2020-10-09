@@ -16,8 +16,8 @@ class CTrafficApp
     bool parseCommandLine (int argc, char **argv);
     void calculateTrafficCapacity ();
 
-    private:
-    void showUsage ();
+    static void showUsage ();
 
+    private:
     std::string m_configPath;
 };
