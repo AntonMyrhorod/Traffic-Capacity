@@ -13,6 +13,3 @@ option(TRCP_BUILD_UNIT_TESTS "Enables the unit tests" OFF)
 
 # Build example application
 option(TRCP_BUILD_EXAMPLE_APP "Enables the example application build" OFF)
-
-# Log level of example application
-set(TRCP_APP_LOG_LEVEL "trace" CACHE STRING "Log level: trace, debug, info, warning, error, critical, off")

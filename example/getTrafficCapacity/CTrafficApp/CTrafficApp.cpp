@@ -11,11 +11,6 @@
 #include "CTrafficApp.hpp"
 
 
-CTrafficApp::CTrafficApp ()
-{
-    spdlog::trace ("TrafficApp constructor");
-}
-
 bool CTrafficApp::parseCommandLine (int argc, char **argv)
 {
     if (argc == 2 && std::string (argv[1]) == "-h")

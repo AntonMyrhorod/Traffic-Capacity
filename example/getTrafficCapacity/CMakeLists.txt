@@ -16,5 +16,3 @@ target_link_libraries(
     spdlog
     trcp
 )
-
-add_definitions(-DLOG_LEVEL="${TRCP_APP_LOG_LEVEL}")

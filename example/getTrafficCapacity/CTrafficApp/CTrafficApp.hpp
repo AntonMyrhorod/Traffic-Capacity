@@ -13,8 +13,6 @@
 class CTrafficApp
 {
     public:
-    CTrafficApp ();
-
     bool parseCommandLine (int argc, char **argv);
     void calculateTrafficCapacity ();
 

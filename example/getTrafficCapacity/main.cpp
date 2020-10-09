@@ -8,14 +8,13 @@
 // Local includes
 #include "CTrafficApp/CTrafficApp.hpp"
 
-
 int main (int argc, char **argv)
 {
     CTrafficApp app;
 
     try
     {
-        spdlog::set_level (spdlog::level::from_str (LOG_LEVEL));
+        spdlog::set_level (spdlog::level::debug);
 
         if (app.parseCommandLine (argc, argv) == false)
             return 1;
