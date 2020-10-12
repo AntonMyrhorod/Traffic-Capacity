@@ -37,14 +37,12 @@ void CReaderFromJson::parse (const std::string &source, data::SRoad &output)
         throw std::exception (errs.c_str ());
     }
 
-    data::SRoad road;
+    output.m_name = root["road"]["name"].asString ();
+    output.m_distance = root["road"]["distance-km"].asFloat ();
+    output.m_lines = root["road"]["lines"].asInt ();
 
-    road.m_name = root["road"]["name"].asString ();
-    road.m_distance = root["road"]["distance-km"].asFloat ();
-    road.m_lines = root["road"]["lines"].asInt ();
-
-    spdlog::debug ("[CReaderFromJson::parse] Road name: {}, distance: {}, lines: {}", road.m_name,
-                   road.m_distance, road.m_lines);
+    spdlog::debug ("[CReaderFromJson::parse] Road name: {}, distance: {}, lines: {}", output.m_name,
+                   output.m_distance, output.m_lines);
 
     data::SPoint startPoint;
     data::SPoint finishPoint;
@@ -56,11 +54,47 @@ void CReaderFromJson::parse (const std::string &source, data::SRoad &output)
     finishPoint.m_latitude = root["road"]["finishPoint"]["latitude-dd"].asFloat ();
     finishPoint.m_longitude = root["road"]["finishPoint"]["longitude-dd"].asFloat ();
 
-    road.m_start = startPoint;
-    road.m_finish = finishPoint;
+    output.m_start = startPoint;
+    output.m_finish = finishPoint;
 
     spdlog::debug ("[CReaderFromJson::parse] Road start point: {}, finish point: {}",
                    startPoint.m_name, finishPoint.m_name);
+
+    const int epochYear = 1900;
+    const int year = root["road"]["year"].asInt ();
+    const int month = root["road"]["month"].asInt ();
+    const int day = root["road"]["day"].asInt ();
+
+    spdlog::debug ("[CReaderFromJson::parse] Statictic date: {}.{}.{}", day, month, year);
+
+    for (const auto &it : root["road"]["timeIntervals"])
+    {
+        data::STimeInterval timeInterval;
+
+        timeInterval.m_maxSpeed = it["maxSpeed-kmh"].asFloat ();
+        timeInterval.m_minSpeed = it["minSpeed-kmh"].asFloat ();
+
+        timeInterval.m_start.tm_year = year - epochYear;
+        timeInterval.m_start.tm_mon = month - 1;
+        timeInterval.m_start.tm_mday = day;
+        timeInterval.m_start.tm_hour = it["startHours"].asInt ();
+        timeInterval.m_start.tm_min = it["startMinutes"].asInt ();
+        mktime (&timeInterval.m_start);
+
+        timeInterval.m_end.tm_year = year - epochYear;
+        timeInterval.m_end.tm_mon = month - 1;
+        timeInterval.m_end.tm_mday = day;
+        timeInterval.m_end.tm_hour = it["endHours"].asInt ();
+        timeInterval.m_end.tm_min = it["endMinutes"].asInt ();
+        mktime (&timeInterval.m_end);
+
+        spdlog::debug ("[CReaderFromJson::parse] time interval: {}:{}, {}:{}, max speed: {} km.h, "
+                       "min speed: {} km.h",
+                       it["startHours"].asInt (), it["startMinutes"].asInt (), it["endHours"].asInt (),
+                       it["endMinutes"].asInt (), timeInterval.m_maxSpeed, timeInterval.m_minSpeed);
+
+        output.m_timeIntervals.push_back (timeInterval);
+    }
 }
 
 } // namespace reader
