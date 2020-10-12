@@ -5,6 +5,8 @@
 #include "trcp/common/SPoint.hpp"
 #include "trcp/common/SRoad.hpp"
 #include "trcp/common/STimeInterval.hpp"
+#include "trcp/functions/ssd/CStoppingSightDistance.hpp"
+#include "trcp/functions/ssd/IStoppingSightDistance.hpp"
 #include "trcp/utils/CReaderFromJson.hpp"
 #include "trcp/utils/IReader.hpp"
 

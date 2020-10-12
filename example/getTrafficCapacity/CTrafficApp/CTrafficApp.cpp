@@ -37,6 +37,10 @@ void CTrafficApp::calculateTrafficCapacity ()
     trcp::data::SRoad road;
 
     reader.parse (m_configPath, road);
+
+    trcp::functions::CStoppingSightDistance ssd;
+
+    ssd.getSSD (40);
 }
 
 void CTrafficApp::showUsage ()

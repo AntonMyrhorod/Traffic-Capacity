@@ -5,6 +5,7 @@ add_library(${TARGET} STATIC)
 include_directories(${CMAKE_SOURCE_DIR}/)
 
 add_subdirectory(utils)
+add_subdirectory(functions)
 
 target_include_directories(
     ${TARGET}
